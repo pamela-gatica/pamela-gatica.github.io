@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pamela Gatica — HR & Data Analytics</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --blue: #1E3A5F;
+    --blue-mid: #2E5484;
+    --blue-light: #EBF1F8;
+    --gold: #B8962E;
+    --gold-light: #F5EDD6;
+    --gold-bright: #D4A843;
+    --silver: #8A9BB0;
+    --silver-light: #F0F3F7;
+    --ink: #0F1E2E;
+    --ink-soft: #3D5166;
+    --ink-muted: #7A90A4;
+    --surface: #EDEEF2;
+    --white: #F5F6FA;
+    --border: rgba(30,58,95,0.1);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--surface); color: var(--ink); overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem 3rem;
+    background: rgba(247,249,252,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: var(--blue); text-decoration: none; letter-spacing: 0.02em; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.78rem; font-weight: 500; color: var(--ink-muted); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center; gap: 5rem;
+    max-width: 1100px; margin: 0 auto;
+    padding: 7rem 3rem 4rem;
+  }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold); border: 1px solid var(--gold); padding: 0.4rem 1rem;
+    border-radius: 2px; margin-bottom: 1.8rem;
+  }
+  .hero-tag::before { content: ''; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 5vw, 4.4rem);
+    line-height: 1.08; letter-spacing: -0.01em; margin-bottom: 1.5rem; font-weight: 600;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero-desc { font-size: 0.97rem; line-height: 1.9; color: var(--ink-soft); max-width: 430px; margin-bottom: 2.5rem; font-weight: 300; }
+  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 0.8rem 2rem; font-weight: 500; font-size: 0.85rem; text-decoration: none; transition: all 0.22s; cursor: pointer; border: none; font-family: 'Inter', sans-serif; letter-spacing: 0.03em; }
+  .btn-primary { background: var(--blue); color: white; border-radius: 2px; }
+  .btn-primary:hover { background: var(--blue-mid); transform: translateY(-1px); }
+  .btn-gold { background: transparent; color: var(--gold); border: 1.5px solid var(--gold); border-radius: 2px; }
+  .btn-gold:hover { background: var(--gold-light); }
+
+  /* HERO CARD */
+  .hero-visual { display: flex; align-items: center; justify-content: center; position: relative; }
+  .hero-card {
+    background: var(--blue); border-radius: 4px;
+    padding: 2.5rem; width: 100%; max-width: 350px;
+    position: relative; overflow: hidden;
+  }
+  .hero-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-bright), var(--gold));
+  }
+  .hero-card::after {
+    content: ''; position: absolute; bottom: -40px; right: -40px;
+    width: 140px; height: 140px;
+    border: 1px solid rgba(184,150,46,0.15); border-radius: 50%;
+  }
+  .avatar {
+    width: 64px; height: 64px; border-radius: 50%;
+    border: 2px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600;
+    color: var(--gold); margin-bottom: 1.2rem;
+    background: rgba(184,150,46,0.1);
+  }
+  .hero-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: white; margin-bottom: 0.2rem; }
+  .hero-card .role { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-bottom: 1.8rem; font-weight: 300; letter-spacing: 0.03em; }
+  .open-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 0.7rem; font-weight: 500; color: var(--gold); border: 1px solid rgba(184,150,46,0.4); padding: 0.3rem 0.75rem; border-radius: 2px; margin-bottom: 1.2rem; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold-bright); animation: pulse 1.8s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.3} }
+  .stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+  .stat-box { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 3px; padding: 0.8rem; }
+  .stat-box .num { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--gold-bright); line-height: 1; display: block; }
+  .stat-box .lbl { font-size: 0.65rem; color: rgba(255,255,255,0.45); margin-top: 0.2rem; display: block; letter-spacing: 0.05em; text-transform: uppercase; }
+
+  /* SECTIONS */
+  section { max-width: 1100px; margin: 0 auto; padding: 5.5rem 3rem; position: relative; z-index: 1; }
+  .section-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 10px; }
+  .section-label::after { content: ''; flex: 1; max-width: 40px; height: 1px; background: var(--gold); opacity: 0.4; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.8rem); letter-spacing: -0.01em; margin-bottom: 3rem; max-width: 580px; line-height: 1.2; font-weight: 600; }
+  .divider { width: 100%; height: 1px; background: var(--border); }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .about-text p { font-size: 0.95rem; line-height: 1.9; color: var(--ink-soft); margin-bottom: 1.2rem; font-weight: 300; }
+  .about-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+  .pill { font-size: 0.75rem; padding: 0.35rem 0.9rem; border: 1px solid var(--border); color: var(--ink-soft); background: white; border-radius: 2px; }
+  .about-meta { display: flex; flex-direction: column; gap: 0.85rem; }
+  .meta-item { display: flex; align-items: flex-start; gap: 1rem; padding: 1.1rem 1.2rem; background: #ffffff; border-radius: 3px; border-left: 3px solid var(--gold); border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .meta-icon { width: 34px; height: 34px; border-radius: 3px; background: var(--gold-light); display: flex; align-items: center; justify-content: center; font-size: 0.95rem; flex-shrink: 0; }
+  .meta-item strong { display: block; font-weight: 500; font-size: 0.85rem; margin-bottom: 0.15rem; color: var(--blue); }
+  .meta-item span { font-size: 0.78rem; color: var(--ink-muted); font-weight: 300; }
+
+  /* SKILLS */
+  .skills-bg { background: var(--blue); }
+  .skills-inner { max-width: 1100px; margin: 0 auto; padding: 5.5rem 3rem; }
+  .skills-inner .section-label { color: var(--gold-bright); }
+  .skills-inner .section-label::after { background: var(--gold-bright); }
+  .skills-inner .section-title { color: white; }
+  .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
+  .skill-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 3px; padding: 1.6rem; transition: transform 0.2s, border-color 0.2s; position: relative; overflow: hidden; }
+  .skill-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--gold); opacity: 0; transition: opacity 0.2s; }
+  .skill-card:hover { transform: translateY(-3px); border-color: rgba(184,150,46,0.3); }
+  .skill-card:hover::before { opacity: 1; }
+  .skill-card-icon { font-size: 1rem; margin-bottom: 1rem; }
+  .skill-card h4 { font-weight: 500; font-size: 0.88rem; margin-bottom: 0.8rem; color: white; letter-spacing: 0.02em; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .skill-tag { font-size: 0.68rem; padding: 0.25rem 0.6rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 2px; color: rgba(255,255,255,0.6); }
+
+  /* PROJECTS */
+  .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
+  .project-card { background: #ffffff; border: 1px solid var(--border); border-radius: 3px; padding: 2rem; transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden; }
+  .project-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), var(--blue-mid)); transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
+  .project-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(30,58,95,0.08); }
+  .project-card:hover::after { transform: scaleX(1); }
+  .project-tag { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); background: var(--blue-light); padding: 0.25rem 0.65rem; border-radius: 2px; display: inline-block; margin-bottom: 1rem; }
+  .project-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 0.7rem; line-height: 1.3; color: var(--blue); }
+  .project-card p { font-size: 0.84rem; line-height: 1.8; color: var(--ink-soft); margin-bottom: 1.2rem; font-weight: 300; }
+  .project-techs { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .tech { font-size: 0.68rem; padding: 0.22rem 0.6rem; background: var(--silver-light); border: 1px solid var(--border); border-radius: 2px; color: var(--ink-muted); }
+
+  /* EDUCATION */
+  .edu-timeline { display: flex; flex-direction: column; }
+  .edu-item { display: grid; grid-template-columns: 120px 1fr; gap: 2.5rem; padding-bottom: 2.5rem; position: relative; }
+  .edu-item:not(:last-child)::after { content: ''; position: absolute; left: 120px; top: 8px; bottom: 0; width: 1px; background: var(--border); transform: translateX(calc(-2.5rem + 0.5px)); }
+  .edu-year { font-size: 0.72rem; color: var(--gold); font-weight: 500; padding-top: 0.15rem; text-align: right; letter-spacing: 0.05em; }
+  .edu-content { background: #ffffff; border: 1px solid var(--border); border-radius: 3px; padding: 1.4rem 1.5rem; position: relative; }
+  .edu-content::before { content: ''; position: absolute; left: -2.5rem; top: 1.1rem; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); border: 2px solid var(--surface); box-shadow: 0 0 0 2px var(--gold); transform: translateX(-50%); }
+  .edu-content h4 { font-weight: 500; font-size: 0.92rem; margin-bottom: 0.2rem; color: var(--blue); }
+  .edu-content .inst { font-size: 0.78rem; color: var(--gold); font-weight: 500; margin-bottom: 0.55rem; }
+  .edu-content p { font-size: 0.8rem; line-height: 1.75; color: var(--ink-muted); font-weight: 300; }
+  .edu-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 0.65rem; font-weight: 500; color: #3B6D11; background: #EAF3DE; padding: 0.2rem 0.55rem; border-radius: 2px; margin-top: 0.5rem; }
+
+  /* CONTACT */
+  .contact-bg { background: var(--ink); }
+  .contact-inner { max-width: 1100px; margin: 0 auto; padding: 5.5rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .contact-left .section-label { color: var(--gold-bright); }
+  .contact-left .section-label::after { background: var(--gold-bright); }
+  .contact-left .section-title { color: white; margin-bottom: 1rem; }
+  .contact-left p { color: rgba(255,255,255,0.5); font-size: 0.93rem; line-height: 1.85; font-weight: 300; }
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-link { display: flex; align-items: center; gap: 1rem; text-decoration: none; padding: 1.1rem 1.4rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 3px; color: white; font-size: 0.88rem; transition: all 0.2s; }
+  .contact-link:hover { background: rgba(184,150,46,0.1); border-color: rgba(184,150,46,0.3); }
+  .contact-link-icon { width: 36px; height: 36px; border-radius: 3px; background: rgba(184,150,46,0.15); border: 1px solid rgba(184,150,46,0.25); display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 600; flex-shrink: 0; color: var(--gold-bright); }
+  .contact-link span { opacity: 0.45; font-size: 0.73rem; display: block; margin-top: 0.1rem; font-weight: 300; }
+
+  /* FOOTER */
+  footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.06); padding: 2.5rem 3rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 0.5rem; }
+  .footer-left { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: rgba(255,255,255,0.35); }
+  .footer-left strong { color: var(--gold); font-weight: 600; }
+  .footer-right { font-size: 0.72rem; color: rgba(255,255,255,0.25); letter-spacing: 0.08em; text-transform: uppercase; }
+  .footer-line { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.3; margin-bottom: 2.5rem; }
+
+  .fade-in { opacity: 1; transform: none; }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; padding: 5.5rem 1.5rem 3rem; gap: 2.5rem; }
+    .hero-visual { order: -1; }
+    .about-grid, .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    .projects-grid { grid-template-columns: 1fr; }
+    #certifications .cert-grid { grid-template-columns: 1fr !important; }
+    section, .skills-inner { padding: 3.5rem 1.5rem; }
+    .edu-item { grid-template-columns: 70px 1fr; gap: 1.5rem; }
+    footer { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Pamela Gatica</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- DECORATIVE SHAPES -->
+<div aria-hidden="true" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden;">
+  <!-- large circle top right -->
+  <div style="position:absolute;top:-120px;right:-120px;width:420px;height:420px;border-radius:50%;border:1.5px solid rgba(184,150,46,0.12);"></div>
+  <div style="position:absolute;top:-60px;right:-60px;width:280px;height:280px;border-radius:50%;border:1px solid rgba(30,58,95,0.08);"></div>
+  <!-- small circle bottom left -->
+  <div style="position:absolute;bottom:18%;left:-80px;width:240px;height:240px;border-radius:50%;border:1.5px solid rgba(184,150,46,0.1);"></div>
+  <!-- tiny filled dot accent -->
+  <div style="position:absolute;top:38%;left:3%;width:10px;height:10px;border-radius:50%;background:rgba(184,150,46,0.18);"></div>
+  <div style="position:absolute;top:22%;right:8%;width:7px;height:7px;border-radius:50%;background:rgba(30,58,95,0.12);"></div>
+  <!-- diagonal line accent -->
+  <svg style="position:absolute;bottom:10%;right:5%;opacity:0.07;" width="120" height="120" viewBox="0 0 120 120"><line x1="0" y1="120" x2="120" y2="0" stroke="#1E3A5F" stroke-width="1"/><line x1="20" y1="120" x2="120" y2="20" stroke="#1E3A5F" stroke-width="1"/><line x1="40" y1="120" x2="120" y2="40" stroke="#1E3A5F" stroke-width="1"/></svg>
+  <!-- square outline mid left -->
+  <div style="position:absolute;top:55%;left:-30px;width:120px;height:120px;border:1px solid rgba(184,150,46,0.1);transform:rotate(18deg);"></div>
+</div>
+
+<!-- HERO -->
+<div style="max-width:1100px;margin:0 auto;position:relative;z-index:1;">
+  <div class="hero">
+    <div class="hero-text">
+      <div class="hero-tag">Available for opportunities</div>
+      <h1>Where <em>people insight</em> meets the power of data.</h1>
+      <p class="hero-desc">HR professional with 5+ years of experience in complex, high-accountability environments — now combining that people expertise with data analytics to drive smarter organizational decisions.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">Get in touch</a>
+        <a href="#projects" class="btn btn-gold">View projects</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="avatar">PG</div>
+        <h3>Pamela Gatica</h3>
+        <p class="role">HR & Data Analytics · Windsor, ON · Canada</p>
+        <div class="stat-row">
+          <div class="stat-box"><span class="num">7+</span><span class="lbl">Projects</span></div>
+          <div class="stat-box"><span class="num">15+</span><span class="lbl">Certifications</span></div>
+          <div class="stat-box"><span class="num">5+</span><span class="lbl">Years HR</span></div>
+          <div class="stat-box"><span class="num">ES·EN</span><span class="lbl">Bilingual</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="section-label">About me</p>
+  <h2 class="section-title">A disciplined mind shaped by service, driven by data.</h2>
+  <div class="about-grid fade-in">
+    <div class="about-text">
+      <p>I began my career as a Military Officer in the Chilean Army, where I spent over five years leading HR and personnel management operations in demanding, high-accountability environments. That experience shaped my ability to manage complex human systems, make decisions under pressure, and communicate clearly across all levels of an organization.</p>
+      <p>In 2023, I relocated to Canada and made a deliberate pivot into data: first completing a year of Computer Science at the University of Windsor, then transitioning to the Data Analytics for Business program at St. Clair College — the intersection I had always been heading toward.</p>
+      <p>I bring a rare combination: the discipline and people expertise of a military HR background, and the technical foundation of modern data analytics.</p>
+      <div class="about-pills">
+        <span class="pill">Employee Relations</span>
+        <span class="pill">People Analytics</span>
+        <span class="pill">SQL & BigQuery</span>
+        <span class="pill">Power BI</span>
+        <span class="pill">Personnel Management</span>
+        <span class="pill">Statistical Analysis</span>
+      </div>
+    </div>
+    <div class="about-meta">
+      <div class="meta-item"><div class="meta-icon">📍</div><div><strong>Location</strong><span>Windsor, Ontario, Canada</span></div></div>
+      <div class="meta-item"><div class="meta-icon">🎓</div><div><strong>Currently studying</strong><span>Data Analytics for Business — St. Clair College (April 2026)</span></div></div>
+      <div class="meta-item"><div class="meta-icon">⭐</div><div><strong>Previous role</strong><span>Military Officer — HR & Personnel Management, Chilean Army</span></div></div>
+      <div class="meta-item"><div class="meta-icon">🌐</div><div><strong>Languages</strong><span>Spanish (native) · English (professional)</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<div class="skills-bg" id="skills">
+  <div class="skills-inner">
+    <p class="section-label">Expertise</p>
+    <h2 class="section-title">Skills built across two disciplines.</h2>
+    <div class="skills-grid fade-in">
+      <div class="skill-card">
+        <div class="skill-card-icon">👥</div>
+        <h4>Human Resources</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Personnel Management</span><span class="skill-tag">Employee Relations</span><span class="skill-tag">Policy & Compliance</span><span class="skill-tag">Workforce Planning</span><span class="skill-tag">Conflict Resolution</span><span class="skill-tag">Organizational Behavior</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">📊</div>
+        <h4>Data Analytics</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">SQL & BigQuery</span><span class="skill-tag">Python</span><span class="skill-tag">Excel & Power Query</span><span class="skill-tag">Power BI</span><span class="skill-tag">Streamlit</span><span class="skill-tag">Statistical Modeling</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">🧠</div>
+        <h4>Research & Psychology</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Organizational Psychology</span><span class="skill-tag">Psychometrics</span><span class="skill-tag">Hypothesis Testing</span><span class="skill-tag">Regression & ANOVA</span><span class="skill-tag">Survey Design</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">🛠️</div>
+        <h4>Tools & Technologies</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Power BI + DAX</span><span class="skill-tag">Google BigQuery</span><span class="skill-tag">Microsoft Excel</span><span class="skill-tag">Python (pandas, scikit-learn)</span><span class="skill-tag">GitHub</span><span class="skill-tag">Monte Carlo Simulation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <p class="section-label">Projects</p>
+  <h2 class="section-title">Analytics work from the program.</h2>
+  <div class="projects-grid fade-in">
+    <div class="project-card">
+      <span class="project-tag">Industry Capstone</span>
+      <h4>Enterprise Data Analytics — HALIGHT</h4>
+      <p>Two-semester industry capstone developing Power BI dashboards for customer retention and churn analysis. Built data models, authored DAX measures, and explored predictive churn modeling with machine learning.</p>
+      <div class="project-techs"><span class="tech">Power BI</span><span class="tech">DAX</span><span class="tech">Python</span><span class="tech">scikit-learn</span><span class="tech">pandas</span></div>
+    </div>
+    <div class="project-card">
+      <span class="project-tag">E-Commerce Analytics</span>
+      <h4>Customer Churn Analysis</h4>
+      <p>End-to-end churn analysis of an e-commerce customer base. Identified characteristics of churned customers, applied classification models, and developed data-driven retention strategies to reduce attrition.</p>
+      <div class="project-techs"><span class="tech">Python</span><span class="tech">scikit-learn</span><span class="tech">pandas</span><span class="tech">Power BI</span><span class="tech">Classification</span></div>
+    </div>
+    <div class="project-card">
+      <span class="project-tag">Sales Analytics</span>
+      <h4>Bike Sales — Revenue & Trend Analysis</h4>
+      <p>Comprehensive sales analysis identifying top-performing product categories (Cross Country Race, Over Mountain, Elite Road) and regional market trends across U.S. states from 2011–2015. Focused on profitability drivers and inventory recommendations.</p>
+      <div class="project-techs"><span class="tech">Excel</span><span class="tech">Power BI</span><span class="tech">Data Cleaning</span><span class="tech">KPI Analysis</span></div>
+    </div>
+    <div class="project-card">
+      <span class="project-tag">Survey & Dashboard</span>
+      <h4>AI Tools Survey — Insights Dashboard</h4>
+      <p>Designed and deployed an electronic survey on AI tool usage and perception (34 respondents). Analyzed results and built a full Power BI dashboard covering usage frequency, device preferences, privacy concerns, and demographic breakdowns.</p>
+      <div class="project-techs"><span class="tech">Survey Design</span><span class="tech">Power BI</span><span class="tech">Excel</span><span class="tech">Data Visualization</span></div>
+    </div>
+    <div class="project-card">
+      <span class="project-tag">Financial Analytics</span>
+      <h4>Investment Analytics Dashboard</h4>
+      <p>Multi-tab Streamlit dashboard covering CAPM, WACC, and DCF valuation models. Incorporated Monte Carlo simulation and technical indicators (SMA, EMA, RSI, MACD) across a portfolio of eight companies.</p>
+      <div class="project-techs"><span class="tech">Python</span><span class="tech">Streamlit</span><span class="tech">Monte Carlo</span><span class="tech">CAPM</span><span class="tech">DCF</span></div>
+    </div>
+    <div class="project-card">
+      <span class="project-tag">Marketing Analytics</span>
+      <h4>Airbnb Business Insights</h4>
+      <p>Comparative market analysis of Airbnb listings across Toronto and Vancouver. Applied segmentation and sentiment analysis to uncover pricing trends, demand patterns, and strategic opportunities.</p>
+      <div class="project-techs"><span class="tech">Python</span><span class="tech">Power BI</span><span class="tech">Excel</span><span class="tech">Sentiment Analysis</span></div>
+    </div>
+    <div class="project-card">
+      <span class="project-tag">Web Development · Python</span>
+      <h4>Student Health Data — Flask Web App</h4>
+      <p>Full-stack web application built with Flask and SQLite to visualize student health data. Features multi-page navigation, a live data table with 100+ records, and a structured SQLite backend.</p>
+      <div class="project-techs"><span class="tech">Python</span><span class="tech">Flask</span><span class="tech">SQLite3</span><span class="tech">HTML</span><span class="tech">Pathlib</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EDUCATION -->
+<section id="education">
+  <p class="section-label">Education & Background</p>
+  <h2 class="section-title">A foundation built across two countries.</h2>
+  <div class="edu-timeline fade-in">
+    <div class="edu-item">
+      <div class="edu-year">2024–2026</div>
+      <div class="edu-content">
+        <h4>Data Analytics for Business — Diploma</h4>
+        <p class="inst">St. Clair College · Windsor, Ontario</p>
+        <p>SQL, Python, Power BI, statistical modeling, machine learning fundamentals, and business intelligence. Expected graduation: April 2026.</p>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-year">2023–2024</div>
+      <div class="edu-content">
+        <h4>Computer Science — First Year</h4>
+        <p class="inst">University of Windsor · Ontario</p>
+        <p>Completed foundational coursework in programming and computational thinking before transitioning to Data Analytics to better align with HR and business intelligence career goals.</p>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-year">2015–2020</div>
+      <div class="edu-content">
+        <h4>Bachelor's Degree in Psychology</h4>
+        <p class="inst">Santo Tomás University · Santiago, Chile</p>
+        <p>Specialization in organizational behavior, research methodology, and psychometrics. Credential assessed and recognized by WES as equivalent to a Canadian bachelor's and master's degree.</p>
+        <div class="edu-badge">✓ WES ECA Validated — Bachelor's & Master's Equivalency</div>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-year">2009–2015</div>
+      <div class="edu-content">
+        <h4>Military Officer — HR & Personnel Management</h4>
+        <p class="inst">Chilean Army · Santiago, Chile</p>
+        <p>Led human resources operations in high-accountability military environments. Managed personnel administration, compliance, workforce planning, and organizational processes across complex institutional structures.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <p class="section-label">Certifications</p>
+  <h2 class="section-title">Continuous learning across AI, ML & cloud.</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;" class="fade-in">
+
+    <div style="background:#ffffff;border:1px solid var(--border);border-radius:3px;padding:1.5rem;border-top:3px solid var(--gold);">
+      <div style="font-size:0.65rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);background:var(--blue-light);padding:0.22rem 0.6rem;border-radius:2px;display:inline-block;margin-bottom:0.9rem;">LinkedIn Learning</div>
+      <h4 style="font-weight:500;font-size:0.9rem;color:var(--blue);margin-bottom:0.7rem;">AI & Responsible AI</h4>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.35rem;">
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Artificial Intelligence for Students</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Introduction to AI for Business</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Foundations of Responsible AI</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>No-Code AI</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Responsible AI Principles & Applications</li>
+      </ul>
+    </div>
+
+    <div style="background:#ffffff;border:1px solid var(--border);border-radius:3px;padding:1.5rem;border-top:3px solid var(--blue-mid);">
+      <div style="font-size:0.65rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);background:var(--blue-light);padding:0.22rem 0.6rem;border-radius:2px;display:inline-block;margin-bottom:0.9rem;">Microsoft</div>
+      <h4 style="font-weight:500;font-size:0.9rem;color:var(--blue);margin-bottom:0.7rem;">Azure AI Fundamentals</h4>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.35rem;">
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>AI Overview</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Computer Vision</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Natural Language Processing</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Document Intelligence & Knowledge Mining</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Generative AI</li>
+      </ul>
+    </div>
+
+    <div style="background:#ffffff;border:1px solid var(--border);border-radius:3px;padding:1.5rem;border-top:3px solid var(--gold-bright);">
+      <div style="font-size:0.65rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);background:var(--blue-light);padding:0.22rem 0.6rem;border-radius:2px;display:inline-block;margin-bottom:0.9rem;">DataCamp</div>
+      <h4 style="font-weight:500;font-size:0.9rem;color:var(--blue);margin-bottom:0.7rem;">Machine Learning & Python</h4>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.35rem;">
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>End-to-End Machine Learning</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Supervised Learning with scikit-learn</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Feature Engineering for ML</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>ML with Tree-Based Models</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Explainable AI (XAI) Concepts</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-bg" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <p class="section-label">Contact</p>
+      <h2 class="section-title">Let's work together.</h2>
+      <p>Open to HR Analyst, People Analytics, HR Generalist, and Data Analyst roles — in Windsor–Essex or remote within Canada. PGWP eligible.</p>
+    </div>
+    <div class="contact-links">
+      <a href="https://linkedin.com/in/YOUR-PROFILE" class="contact-link">
+        <div class="contact-link-icon">in</div>
+        <div>LinkedIn<span>linkedin.com/in/pamela-gatica</span></div>
+      </a>
+      <a href="https://github.com/pamela-gatica" class="contact-link">
+        <div class="contact-link-icon">GH</div>
+        <div>GitHub<span>github.com/pamela-gatica</span></div>
+      </a>
+      <a href="mailto:pame.gatica12@gmail.com" class="contact-link">
+        <div class="contact-link-icon">@</div>
+        <div>Email<span>pame.gatica12@gmail.com</span></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-line" style="width:60px;"></div>
+  <div class="footer-left">Crafted by <strong>Pamela Gatica</strong> — Windsor, Ontario · 2026</div>
+  <div class="footer-right">DATA ANALYTICS · HR · PEOPLE STRATEGY</div>
+</footer>
+
+</body>
+</html>
