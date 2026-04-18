@@ -126,7 +126,7 @@
   .skills-inner .section-label { color: var(--gold-bright); }
   .skills-inner .section-label::after { background: var(--gold-bright); }
   .skills-inner .section-title { color: white; }
-  .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
   .skill-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 3px; padding: 1.6rem; transition: transform 0.2s, border-color 0.2s; position: relative; overflow: hidden; }
   .skill-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--gold); opacity: 0; transition: opacity 0.2s; }
   .skill-card:hover { transform: translateY(-3px); border-color: rgba(184,150,46,0.3); }
@@ -232,7 +232,7 @@
   <div class="hero">
     <div class="hero-text">
       <div class="hero-tag">Available for opportunities</div>
-      <h1>Where <em>people insight</em> meets the power of data.</h1>
+      <h1>Where <em>analytical thinking</em> meets the power of data.</h1>
       <p class="hero-desc">HR professional with 5+ years of experience in complex, high-accountability environments — now combining that people expertise with data analytics to drive smarter organizational decisions.</p>
       <div class="hero-cta">
         <a href="#contact" class="btn btn-primary">Get in touch</a>
@@ -263,9 +263,9 @@
   <h2 class="section-title">A disciplined mind shaped by service, driven by data.</h2>
   <div class="about-grid fade-in">
     <div class="about-text">
-      <p>I began my career as a Military Officer in the Chilean Army, where I spent over five years leading HR and personnel management operations in demanding, high-accountability environments. That experience shaped my ability to manage complex human systems, make decisions under pressure, and communicate clearly across all levels of an organization.</p>
-      <p>In 2023, I relocated to Canada and made a deliberate pivot into data: first completing a year of Computer Science at the University of Windsor, then transitioning to the Data Analytics for Business program at St. Clair College — the intersection I had always been heading toward.</p>
-      <p>I bring a rare combination: the discipline and people expertise of a military HR background, and the technical foundation of modern data analytics.</p>
+      <p>I began my career managing HR and personnel operations for the Chilean Army, where I spent over five years leading large-scale data management in high-accountability environments. That experience shaped my ability to maintain complex databases, ensure data integrity across multiple systems, and communicate clearly across all levels of an organization. Alongside this, I completed a degree in Psychology — which deepened my understanding of human behavior, organizational dynamics, and evidence-based decision making.</p>
+      <p>In 2023, I relocated to Canada and made a deliberate pivot into data analytics: first completing a year of Computer Science at the University of Windsor, then transitioning to the Data Analytics for Business program at St. Clair College — the intersection I had always been heading toward.</p>
+      <p>I bring a rare combination: hands-on experience in asset data management, cross-functional coordination, and operational documentation — paired with a modern technical foundation in SQL, Python, Power BI, and Excel/VBA. I thrive in roles where data accuracy, structured reporting, and collaboration across teams make a real difference.</p>
       <div class="about-pills">
         <span class="pill">Employee Relations</span>
         <span class="pill">People Analytics</span>
@@ -290,7 +290,7 @@
 <div class="skills-bg" id="skills">
   <div class="skills-inner">
     <p class="section-label">Expertise</p>
-    <h2 class="section-title">Skills built across two disciplines.</h2>
+    <h2 class="section-title">Skills built across disciplines.</h2>
     <div class="skills-grid fade-in">
       <div class="skill-card">
         <div class="skill-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8962E" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
@@ -304,6 +304,13 @@
         <h4>Data Analytics</h4>
         <div class="skill-tags">
           <span class="skill-tag">SQL & BigQuery</span><span class="skill-tag">Python</span><span class="skill-tag">Excel & Power Query</span><span class="skill-tag">Power BI</span><span class="skill-tag">Statistical Modeling</span>
+        </div>
+      </div>
+     <div class="skill-card">
+        <div class="skill-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8962E" stroke-width="1.8"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></div>
+        <h4>Data & Asset Management</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Database Management</span><span class="skill-tag">Data Integrity</span><span class="skill-tag">Inventory Tracking</span><span class="skill-tag">Version Control</span><span class="skill-tag">Documentation</span>
         </div>
       </div>
       <div class="skill-card">
@@ -338,6 +345,18 @@
       <div class="project-techs"><span class="tech">Power BI</span><span class="tech">DAX</span><span class="tech">Python</span><span class="tech">scikit-learn</span><span class="tech">pandas</span></div>
     </div>
     <div class="project-card">
+      <span class="project-tag">Healthcare Analytics</span>
+      <h4>ICU Patient Data Analysis — MIMIC-III</h4>
+      <p>Exploratory analysis of the MIMIC-III clinical database using SQL and BigQuery. Examined ICU patient demographics, length-of-stay patterns, and mortality indicators to extract meaningful insights from real-world clinical data. Demonstrates applied analytics in a high-complexity healthcare dataset.</p>
+      <div class="project-techs"><span class="tech">SQL</span><span class="tech">BigQuery</span><span class="tech">Python</span><span class="tech">Matplotlib</span><span class="tech">Healthcare Data</span></div>
+    </div>
+    <div class="project-card">
+      <span class="project-tag">Web Development · Python</span>
+      <h4>Student Health Data — Flask Web App</h4>
+      <p>Originally a group project, independently refactored and deployed as a full-stack web application. Built with Flask and SQLite to visualize student health and wellness data across multiple pages. Features a clean UI, structured database backend, and is live on Render with automatic updates.</p>
+      <div class="project-techs"><span class="tech">Python</span><span class="tech">Flask</span><span class="tech">SQLite3</span><span class="tech">HTML/CSS</span><span class="tech">Render</span></div>
+    </div>
+    <div class="project-card">
       <span class="project-tag">E-Commerce Analytics</span>
       <h4>Customer Churn Analysis</h4>
       <p>End-to-end churn analysis of an e-commerce customer base. Identified characteristics of churned customers, applied classification models, and developed data-driven retention strategies to reduce attrition.</p>
@@ -348,12 +367,6 @@
       <h4>Bike Sales — Revenue & Trend Analysis</h4>
       <p>Comprehensive sales analysis identifying top-performing product categories (Cross Country Race, Over Mountain, Elite Road) and regional market trends across U.S. states from 2011–2015. Focused on profitability drivers and inventory recommendations.</p>
       <div class="project-techs"><span class="tech">Excel</span><span class="tech">Power BI</span><span class="tech">Data Cleaning</span><span class="tech">KPI Analysis</span></div>
-    </div>
-    <div class="project-card">
-      <span class="project-tag">Survey & Dashboard</span>
-      <h4>AI Tools Survey — Insights Dashboard</h4>
-      <p>Designed and deployed an electronic survey on AI tool usage and perception. Analyzed results and built a full Power BI dashboard covering usage frequency, device preferences, privacy concerns, and demographic breakdowns.</p>
-      <div class="project-techs"><span class="tech">Survey Design</span><span class="tech">Power BI</span><span class="tech">Excel</span><span class="tech">Data Visualization</span></div>
     </div>
     <div class="project-card">
       <span class="project-tag">Financial Analytics</span>
@@ -368,11 +381,13 @@
       <div class="project-techs"><span class="tech">Python</span><span class="tech">Power BI</span><span class="tech">Excel</span><span class="tech">Sentiment Analysis</span></div>
     </div>
     <div class="project-card">
-      <span class="project-tag">Web Development · Python</span>
-      <h4>Student Health Data — Flask Web App</h4>
-      <p>Full-stack web application built with Flask and SQLite to visualize student health data. Features multi-page navigation, a live data table with 100+ records, and a structured SQLite backend.</p>
-      <div class="project-techs"><span class="tech">Python</span><span class="tech">Flask</span><span class="tech">SQLite3</span><span class="tech">HTML</span><span class="tech">Pathlib</span></div>
+      <span class="project-tag">Survey & Dashboard</span>
+      <h4>AI Tools Survey — Insights Dashboard</h4>
+      <p>Designed and deployed an electronic survey on AI tool usage and perception. Analyzed results and built a full Power BI dashboard covering usage frequency, device preferences, privacy concerns, and demographic breakdowns.</p>
+      <div class="project-techs"><span class="tech">Survey Design</span><span class="tech">Power BI</span><span class="tech">Excel</span><span class="tech">Data Visualization</span></div>
     </div>
+    
+    
   </div>
 </section>
 
@@ -472,7 +487,7 @@
     <div class="contact-left">
       <p class="section-label">Contact</p>
       <h2 class="section-title">Let's work together.</h2>
-      <p>Open to HR Analyst, People Analytics, HR Generalist, and Data Analyst roles — in Windsor–Essex or remote within Canada. PGWP eligible.</p>
+      <p>Open to Data Analyst, Data Management, Business Intelligence, and HR Analytics roles — Windsor–Essex or remote within Canada. PGWP eligible.</p>
     </div>
     <div class="contact-links">
       <a href="https://www.linkedin.com/in/pamela-gatica-1566ba245" class="contact-link">
