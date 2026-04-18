@@ -139,6 +139,8 @@
 
   /* PROJECTS */
   .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
+  .projects-grid a { display: contents; }
+  .projects-grid a .project-card { cursor: pointer; }
   .project-card { background: #ffffff; border: 1px solid var(--border); border-radius: 3px; padding: 2rem; transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden; }
   .project-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), var(--blue-mid)); transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
   .project-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(30,58,95,0.08); }
