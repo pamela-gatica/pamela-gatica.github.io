@@ -191,6 +191,7 @@
     .skills-grid { grid-template-columns: repeat(2, 1fr); }
     .projects-grid { grid-template-columns: 1fr; }
     #certifications .cert-grid { grid-template-columns: 1fr !important; }
+    #certifications .cert-grid > div { grid-column: span 1 !important; }
     section, .skills-inner { padding: 3.5rem 1.5rem; }
     .edu-item { grid-template-columns: 70px 1fr; gap: 1.5rem; }
     footer { padding: 2rem 1.5rem; }
@@ -246,7 +247,7 @@
         <p class="role">HR & Data Analytics · Windsor, ON · Canada</p>
         <div class="stat-row">
           <div class="stat-box"><span class="num">7+</span><span class="lbl">Projects</span></div>
-          <div class="stat-box"><span class="num">15+</span><span class="lbl">Certifications</span></div>
+          <div class="stat-box"><span class="num">30+</span><span class="lbl">Certifications</span></div>
           <div class="stat-box"><span class="num">5+</span><span class="lbl">Years HR</span></div>
           <div class="stat-box"><span class="num">ES·EN</span><span class="lbl">Bilingual</span></div>
         </div>
@@ -425,22 +426,44 @@
 <!-- CERTIFICATIONS -->
 <section id="certifications">
   <p class="section-label">Certifications</p>
-  <h2 class="section-title">Continuous learning across AI, ML & cloud.</h2>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;" class="fade-in">
+  <h2 class="section-title">Continuous learning across AI, ML & analytics.</h2>
+  <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:1.2rem;" class="fade-in cert-grid">
 
-    <div style="background:#ffffff;border:1px solid var(--border);border-radius:3px;padding:1.5rem;border-top:3px solid var(--gold);">
+    <!-- DataCamp: ML & Python (12 courses) -->
+    <div style="grid-column:span 2;background:#ffffff;border:1px solid var(--border);border-radius:3px;padding:1.5rem;border-top:3px solid var(--gold-bright);">
+      <div style="font-size:0.65rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);background:var(--blue-light);padding:0.22rem 0.6rem;border-radius:2px;display:inline-block;margin-bottom:0.9rem;">DataCamp</div>
+      <h4 style="font-weight:500;font-size:0.9rem;color:var(--blue);margin-bottom:0.7rem;">Machine Learning & Python</h4>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.35rem;">
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>End-to-End Machine Learning</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Supervised Learning with scikit-learn</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Intro to Predictive Analytics</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Linear Classifiers in Python</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Feature Engineering for ML</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Model Validation in Python</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Hyperparameter Tuning in Python</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>ML with Tree-Based Models in Python</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Cluster Analysis in Python</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Explainable AI (XAI) Concepts</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Hypothesis Testing in Python</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Sampling in Python</li>
+      </ul>
+    </div>
+
+    <!-- LinkedIn Learning: AI & Responsible AI -->
+    <div style="grid-column:span 2;background:#ffffff;border:1px solid var(--border);border-radius:3px;padding:1.5rem;border-top:3px solid var(--gold);">
       <div style="font-size:0.65rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);background:var(--blue-light);padding:0.22rem 0.6rem;border-radius:2px;display:inline-block;margin-bottom:0.9rem;">LinkedIn Learning</div>
       <h4 style="font-weight:500;font-size:0.9rem;color:var(--blue);margin-bottom:0.7rem;">AI & Responsible AI</h4>
       <ul style="list-style:none;display:flex;flex-direction:column;gap:0.35rem;">
         <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Artificial Intelligence for Students</li>
-        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Introduction to AI for Business</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Introduction to Artificial Intelligence</li>
         <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Foundations of Responsible AI</li>
         <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>No-Code AI</li>
         <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Responsible AI Principles & Applications</li>
       </ul>
     </div>
 
-    <div style="background:#ffffff;border:1px solid var(--border);border-radius:3px;padding:1.5rem;border-top:3px solid var(--blue-mid);">
+    <!-- Microsoft Azure AI -->
+    <div style="grid-column:span 2;background:#ffffff;border:1px solid var(--border);border-radius:3px;padding:1.5rem;border-top:3px solid var(--blue-mid);">
       <div style="font-size:0.65rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);background:var(--blue-light);padding:0.22rem 0.6rem;border-radius:2px;display:inline-block;margin-bottom:0.9rem;">Microsoft</div>
       <h4 style="font-weight:500;font-size:0.9rem;color:var(--blue);margin-bottom:0.7rem;">Azure AI Fundamentals</h4>
       <ul style="list-style:none;display:flex;flex-direction:column;gap:0.35rem;">
@@ -452,26 +475,27 @@
       </ul>
     </div>
 
-    <div style="background:#ffffff;border:1px solid var(--border);border-radius:3px;padding:1.5rem;border-top:3px solid #1E3A5F;">
-      <div style="font-size:0.65rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);background:var(--blue-light);padding:0.22rem 0.6rem;border-radius:2px;display:inline-block;margin-bottom:0.9rem;">Coursera</div>
-      <h4 style="font-weight:500;font-size:0.9rem;color:var(--blue);margin-bottom:0.7rem;">Workday HCM for Business Users</h4>
+    <!-- LinkedIn Learning: Project Management & Tools -->
+    <div style="grid-column:span 3;background:#ffffff;border:1px solid var(--border);border-radius:3px;padding:1.5rem;border-top:3px solid var(--blue);">
+      <div style="font-size:0.65rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);background:var(--blue-light);padding:0.22rem 0.6rem;border-radius:2px;display:inline-block;margin-bottom:0.9rem;">LinkedIn Learning</div>
+      <h4 style="font-weight:500;font-size:0.9rem;color:var(--blue);margin-bottom:0.7rem;">Project Management & Tools</h4>
       <ul style="list-style:none;display:flex;flex-direction:column;gap:0.35rem;">
-        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Workday Human Capital Management course</li>
-        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Completed May 28, 2026</li>
-        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Authorized by Workday and offered through Coursera</li>
-        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Focus on business user HCM workflows and human capital processes</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Agile Foundations</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Project Management Simplified</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Learning Jira (Cloud Edition)</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Learning Jira Leveraging Sprints</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Querying Microsoft SQL Server 2022</li>
       </ul>
     </div>
 
-    <div style="background:#ffffff;border:1px solid var(--border);border-radius:3px;padding:1.5rem;border-top:3px solid var(--gold-bright);">
-      <div style="font-size:0.65rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);background:var(--blue-light);padding:0.22rem 0.6rem;border-radius:2px;display:inline-block;margin-bottom:0.9rem;">DataCamp</div>
-      <h4 style="font-weight:500;font-size:0.9rem;color:var(--blue);margin-bottom:0.7rem;">Machine Learning & Python</h4>
+    <!-- Coursera & Other -->
+    <div style="grid-column:span 3;background:#ffffff;border:1px solid var(--border);border-radius:3px;padding:1.5rem;border-top:3px solid #1E3A5F;">
+      <div style="font-size:0.65rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);background:var(--blue-light);padding:0.22rem 0.6rem;border-radius:2px;display:inline-block;margin-bottom:0.9rem;">Coursera & Other</div>
+      <h4 style="font-weight:500;font-size:0.9rem;color:var(--blue);margin-bottom:0.7rem;">HR Systems & Professional</h4>
       <ul style="list-style:none;display:flex;flex-direction:column;gap:0.35rem;">
-        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>End-to-End Machine Learning</li>
-        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Supervised Learning with scikit-learn</li>
-        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Feature Engineering for ML</li>
-        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>ML with Tree-Based Models</li>
-        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Explainable AI (XAI) Concepts</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Workday Human Capital Management for Business — Completed May 28, 2026</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>Intro to Data Science</li>
+        <li style="font-size:0.78rem;color:var(--ink-muted);display:flex;gap:6px;"><span style="color:var(--gold);">›</span>CITI Completion Certificate</li>
       </ul>
     </div>
 
