@@ -147,6 +147,10 @@
   .project-card p { font-size: 0.84rem; line-height: 1.8; color: var(--ink-soft); margin-bottom: 1.2rem; font-weight: 300; }
   .project-techs { display: flex; flex-wrap: wrap; gap: 0.4rem; }
   .tech { font-size: 0.68rem; padding: 0.22rem 0.6rem; background: var(--silver-light); border: 1px solid var(--border); border-radius: 2px; color: var(--ink-muted); }
+  .project-links { display: flex; align-items: center; gap: 0.75rem; margin-top: 1rem; flex-wrap: wrap; }
+  .project-link { font-size: 0.72rem; font-weight: 500; color: var(--blue-mid); text-decoration: none; display: inline-flex; align-items: center; gap: 4px; letter-spacing: 0.02em; border-bottom: 1px solid var(--border); padding-bottom: 1px; transition: color 0.2s, border-color 0.2s; }
+  .project-link:hover { color: var(--gold); border-color: var(--gold); }
+  .ai-badge { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--gold); background: var(--gold-light); border: 1px solid rgba(184,150,46,0.25); padding: 0.2rem 0.55rem; border-radius: 2px; }
 
   /* EDUCATION */
   .edu-timeline { display: flex; flex-direction: column; }
@@ -375,10 +379,18 @@
       <div class="project-techs"><span class="tech">Python</span><span class="tech">Flask</span><span class="tech">SQLite3</span><span class="tech">HTML</span><span class="tech">Pathlib</span></div>
     </div>
     <div class="project-card">
-      <span class="project-tag">Full-Stack · Production App</span>
+      <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:1rem;">
+        <span class="project-tag" style="margin-bottom:0;">Full-Stack · Production App</span>
+        <span class="ai-badge">AI-Augmented</span>
+      </div>
       <h4>Community Management Platform — PWA</h4>
-      <p>End-to-end web application for a nonprofit organization, deployed in production with real users. Includes real-time messaging (WebSockets), push notifications (VAPID), ministry scheduling with role-based access, multilingual support (ES/EN), announcements with PDF viewer, password recovery via email API, and a daily Bible verse feed. Installable as a native app on iOS and Android.</p>
+      <p>End-to-end web application for a nonprofit organization, deployed in production with real users. Includes real-time messaging (WebSockets), push notifications (VAPID), ministry scheduling with role-based access, multilingual support (ES/EN), announcements with PDF viewer, password recovery via email API, and a daily Bible verse feed. Installable as a native app on iOS and Android. Developed in collaboration with Claude (Anthropic) as AI pair-programmer.</p>
       <div class="project-techs"><span class="tech">Python</span><span class="tech">Flask</span><span class="tech">PostgreSQL</span><span class="tech">Socket.IO</span><span class="tech">SQLAlchemy</span><span class="tech">Railway</span><span class="tech">Cloudinary</span><span class="tech">PWA</span><span class="tech">i18n</span></div>
+      <div class="project-links">
+        <a href="https://claude.ai/code/artifact/4d65511b-7b4f-495f-b49f-2360d068a766" target="_blank" class="project-link">Architecture overview →</a>
+        <span style="width:1px;height:12px;background:var(--border);display:inline-block;"></span>
+        <span style="font-size:0.68rem;color:var(--ink-muted);">Built with Claude AI (Anthropic)</span>
+      </div>
     </div>
   </div>
 </section>
