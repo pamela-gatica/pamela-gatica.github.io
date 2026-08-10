@@ -138,6 +138,11 @@
 
   /* PROJECTS */
   .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
+  .category-header { grid-column: 1 / -1; display: flex; align-items: center; gap: 0.75rem; padding-bottom: 0.65rem; border-bottom: 1.5px solid var(--border); }
+  .category-header-label { font-size: 0.67rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); }
+  .category-header-count { font-size: 0.67rem; color: var(--ink-muted); font-weight: 300; letter-spacing: 0.04em; }
+  .category-header + .project-card { margin-top: 0; }
+  .category-spacer { grid-column: 1 / -1; height: 1.2rem; }
   .project-card { background: #ffffff; border: 1px solid var(--border); border-radius: 3px; padding: 2rem; transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden; }
   .project-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), var(--blue-mid)); transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
   .project-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(30,58,95,0.08); }
@@ -334,8 +339,15 @@
 <!-- PROJECTS -->
 <section id="projects">
   <p class="section-label">Projects</p>
-  <h2 class="section-title">Analytics work built during the program.</h2>
+  <h2 class="section-title">Analytics and development work.</h2>
   <div class="projects-grid fade-in">
+
+    <!-- ── DATA ANALYTICS ── -->
+    <div class="category-header">
+      <span class="category-header-label">Data Analytics</span>
+      <span class="category-header-count">6 projects</span>
+    </div>
+
     <div class="project-card">
       <span class="project-tag">Industry Capstone</span>
       <h4>Enterprise Data Analytics — HALIGHT</h4>
@@ -350,12 +362,12 @@
     </div>
     <div class="project-card">
       <span class="project-tag">Sales Analytics</span>
-      <h4>Bike Sales — Revenue & Trend Analysis</h4>
+      <h4>Bike Sales — Revenue &amp; Trend Analysis</h4>
       <p>Comprehensive sales analysis identifying top-performing product categories (Cross Country Race, Over Mountain, Elite Road) and regional market trends across U.S. states from 2011–2015. Focused on profitability drivers and inventory recommendations.</p>
       <div class="project-techs"><span class="tech">Excel</span><span class="tech">Power BI</span><span class="tech">Data Cleaning</span><span class="tech">KPI Analysis</span></div>
     </div>
     <div class="project-card">
-      <span class="project-tag">Survey & Dashboard</span>
+      <span class="project-tag">Survey &amp; Dashboard</span>
       <h4>AI Tools Survey — Insights Dashboard</h4>
       <p>Designed and deployed an electronic survey on AI tool usage and perception (34 respondents). Analyzed results and built a full Power BI dashboard covering usage frequency, device preferences, privacy concerns, and demographic breakdowns.</p>
       <div class="project-techs"><span class="tech">Survey Design</span><span class="tech">Power BI</span><span class="tech">Excel</span><span class="tech">Data Visualization</span></div>
@@ -372,6 +384,14 @@
       <p>Comparative market analysis of Airbnb listings across Toronto and Vancouver. Applied segmentation and sentiment analysis to uncover pricing trends, demand patterns, and strategic opportunities.</p>
       <div class="project-techs"><span class="tech">Python</span><span class="tech">Power BI</span><span class="tech">Excel</span><span class="tech">Sentiment Analysis</span></div>
     </div>
+
+    <!-- ── WEB & APP DEVELOPMENT ── -->
+    <div class="category-spacer"></div>
+    <div class="category-header">
+      <span class="category-header-label">Web &amp; App Development</span>
+      <span class="category-header-count">2 projects</span>
+    </div>
+
     <div class="project-card">
       <span class="project-tag">Web Development · Python</span>
       <h4>Student Health Data — Flask Web App</h4>
